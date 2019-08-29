@@ -111,7 +111,7 @@ npm run dev
 ### Expected Results
 
 * The above steps completed successfully
-* The `camunda-modeler-workshop/camunda-modeler-plugin-custom` directory contains sources of your modeler plug-in.
+* The `camunda-modeler-workshop/camunda-modeler-plugin-custom` directory contains your modeler plug-in.
 
 
 ## Step 4: Link your Plug-in with the Camunda Modeler
@@ -196,7 +196,7 @@ This generated the extension in the `bpmnlint-plugin-custom` sub-directory.
 ### Expected Results
 
 * The above steps completed successfully
-* The `camunda-modeler-workshop/bpmnlint-plugin-custom` directory contains sources of your bpmnlint plug-in.
+* The `camunda-modeler-workshop/bpmnlint-plugin-custom` directory contains your bpmnlint plug-in.
 
 
 ## Step 7: Integrate Custom Lint Rules with our Plug-in
