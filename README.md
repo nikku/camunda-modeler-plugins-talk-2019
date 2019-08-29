@@ -116,6 +116,115 @@ Restart the Camunda Modeler. Open the developer console via `F12`. Create a BPMN
     ![Developer console with custom log output](./images/04_developer_console.png)
 
 
+## Step 5: Allow Rules to be Packed with the Plug-in
+
+The linter plug-in [offers a way](https://github.com/camunda/camunda-modeler-linter-plugin#overriding-provided-rules) how we can configure used linter rules and provide our own rules. Lets use this to get rid of the annoying label required rule.
+
+Within the `camunda-modeler-plugin-custom` directory, install the [bpmnlint-loader](https://github.com/nikku/bpmnlint-loader).
+
+```sh
+npm install bpmnlint bpmnlint-loader --save-dev
+```
+
+Extend the `webpack.config.js` [as documented](https://github.com/nikku/bpmnlint-loader#usage) to use the loader to consume [bpmnlint configuration files](https://github.com/bpmn-io/bpmnlint#configuration).
+
+Create a `.bpmnlintrc` file, describing our configured rules in the `client` directory like this:
+
+```json
+{
+  "extends": [
+    "bpmnlint:recommended"
+  ],
+  "rules": {
+    "label-required": "off"
+  }
+}
+```
+
+Replace your `client/index.js` file with the one [documented](https://github.com/camunda/camunda-modeler-linter-plugin#overriding-provided-rules).
+
+Restart your plug-in development build
+
+```
+npm run dev
+```
+
+Go into the Camunda Modeler and reload it by pressing `CtrlOrCmd+R` within the development tools.
+
+
+#### Expected Behavior
+
+* The label required rule is disabled in the Modeler
+    ![No Label Required](./images/05_label_rule_disabled.png)
+
+
+```
+npm install bpmnlint-loader bpmnlint-plugin-custom@file:../bpmnlint-plugin-custom
+```
+
+
+## Step 6: Create your BPMNLint Rules Extension
+
+The Camunda Modeler linter plug-in uses [bpmnlint](https://github.com/bpmn-io/bpmnlint) under the hood.
+
+To create our own rules, generate a rule extension project from within the `camunda-modeler-workshop` directory.
+
+```
+npx create-bpmnlint-plugin custom
+
+cd bpmnlint-plugin-custom
+npm install
+npm test
+```
+
+This generated the extension in the `bpmnlint-plugin-custom` sub-directory.
+
+#### Expected Results
+
+* The above steps completed successfully
+* The `camunda-modeler-workshop/bpmnlint-plugin-custom` directory contains sources of your bpmnlint plug-in.
+
+
+## Step 7: Integrate Custom Lint Rules with our Plug-in
+
+Within the `camunda-modeler-plugin-custom` directory, link the local plug-in:
+
+```
+npm install bpmnlint-plugin-custom@file:../bpmnlint-plugin-custom
+```
+
+Update the `.bpmnlintrc` file to enable the `custom/no-manual-task` rule:
+
+```json
+{
+  "extends": [
+    "bpmnlint:recommended"
+  ],
+  "rules": {
+    "label-required": "off",
+    "custom/no-manual-task": "error"
+  }
+}
+```
+
+Reload the Camunda Modeler.
+
+Model a manual task.
+
+#### Expected Results
+
+* The linter warns you when modeling the manual task
+    ![Manual Task no no](./images/07_manual_task_error.png)
+
+
+#### Step 8: Go Wild and Create your Own Rules
+
+A couple of ideas what to do next:
+
+* Copy the `no-manual-task` rule to warn on user tasks. Users are usually slow, we'd like to avoid them for black-box processing.
+* Disallow all mechanisms but external tasks for implementing work with the engine.
+
+
 ## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
