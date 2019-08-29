@@ -217,7 +217,7 @@ Model a manual task.
     ![Manual Task no no](./images/07_manual_task_error.png)
 
 
-#### Step 8: Go Wild and Create your Own Rules
+## Step 8: Go Wild and Create your Own Rules
 
 A couple of ideas what to do next:
 
