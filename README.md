@@ -19,16 +19,14 @@ More specific, we set out the accomplish the following:
 
 ## Prerequisites
 
-* You have an appropriate command line set up (_NO `cmd`_ but something like [`git-bash`](https://www.atlassian.com/git/tutorials/git-bash) on Windows)
+* You have an appropriate command line set up (__NO `cmd`__ but something like [`git-bash`](https://www.atlassian.com/git/tutorials/git-bash) on Windows)
 * You've [downloaded the Camunda Modeler](https://camunda.com/download/modeler/)
 * You have [Node.js](https://nodejs.org/en/) (LTS or higher) installed
 
-To verify, ensure the following works:
+#### Expected Results
 
-* Opening the Camunda Modeler
-
-* Retrieving versions of `node`, `npm` and `npx` via the command line:
-
+* You can open the Camunda Modeler
+* You can retrieve versions of `node`, `npm` and `npx` via the command line:
     ```
     node -v
     npm -v
@@ -49,9 +47,7 @@ Restart the Camunda Modeler.
 #### Expected Results
 
 * The [Linter plug-in](https://github.com/camunda/camunda-modeler-linter-plugin) is downloaded from GitHub and unpacked to the `resources/plugins/camunda-modeler-linter-plugin` directory.
-
 * After restarting the Camunda Modeler validation controls show up when opening a BPMN diagram:
-
     ![Linter Plug-in Installed](./images/00_linter_plugin_installed.png)
 
 
@@ -62,7 +58,6 @@ You got a local BPMN diagram? Open the diagram. Activate the linting mode by cli
 #### Expected Results
 
 * Linter errors and warnings show up on the diagram. Or your diagram is bullet-proof already!
-
    ![Linter Plug-in Enabled](./images/01_linter_plugin_enabled.png)
 
 
