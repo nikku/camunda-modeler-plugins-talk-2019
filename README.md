@@ -239,7 +239,7 @@ Model a manual task.
 
 A couple of ideas what to do next:
 
-* Copy the `no-manual-task` rule to warn on user tasks. We many avoid them when  we'd like to avoid them for black-box processing.
+* Copy the `no-manual-task` rule to warn on user tasks. We want to avoid them during black-box processing.
 * Debug rule evaluation, dig into elements that are being validated and the properties the BPMN meta-model exposes.
 * Can you create a rule that warns on all but external tasks for implementing work with the engine?
 
