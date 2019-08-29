@@ -62,22 +62,19 @@ You got a local BPMN diagram? Open the diagram. Activate the linting mode by cli
    ![Linter Plug-in Enabled](./images/01_linter_plugin_enabled.png)
 
 
-## Step 2: Create a Plug-in that Provides own Rules
+## Step 2: Create a Project Directory to Work in
 
 The linter plug-in has a [documented extension point](https://github.com/camunda/camunda-modeler-linter-plugin#overriding-provided-rules) to override the provided lint rules with custom ones.
 
 We will create our own plug-in that provides our own, custom rules to the app.
 
-
-## Step 2: Create a Project Directory to Work in
-
-We'll create the directory `camunda-modeler-workshop` and work from there in
-the next steps.
+To start, create the directory `camunda-modeler-workshop` and work from there in the next steps.
 
 ```
 mkdir camunda-modeler-workshop
 cd camunda-modeler-workshop
 ```
+
 
 ## Step 3: Generate Your Own Camunda Modeler Plug-in
 
@@ -156,11 +153,6 @@ Go into the Camunda Modeler and reload it by pressing `CtrlOrCmd+R` within the d
 
 * The label required rule is disabled in the Modeler
     ![No Label Required](./images/05_label_rule_disabled.png)
-
-
-```
-npm install bpmnlint-loader bpmnlint-plugin-custom@file:../bpmnlint-plugin-custom
-```
 
 
 ## Step 6: Create your BPMNLint Rules Extension
