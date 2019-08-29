@@ -19,14 +19,14 @@ More specific, we set out the accomplish the following:
 
 ## Prerequisites
 
-#### Verify
+### Verify
 
 * You have an appropriate command line set up (__NO `cmd`__ but something like [`git-bash`](https://www.atlassian.com/git/tutorials/git-bash) on Windows)
 * You've [downloaded the Camunda Modeler](https://camunda.com/download/modeler/)
 * You have [Node.js](https://nodejs.org/en/) (LTS or higher) installed
 * You have an editor / IDE suitable for JavaScript development
 
-#### Expected Results
+### Expected Results
 
 * You can open the Camunda Modeler
 * You can retrieve versions of `node`, `npm` and `npx` via the command line:
@@ -39,7 +39,7 @@ More specific, we set out the accomplish the following:
 
 ## Step 0: Install Linter Plug-in
 
-#### Instructions
+### Instructions
 
 Within the Camunda Modeler `resources/plugins` directory (cf. [plug-in search paths](https://github.com/camunda/camunda-modeler/tree/develop/docs/plugins#plugging-into-the-camunda-modeler)) execute:
 
@@ -47,9 +47,11 @@ Within the Camunda Modeler `resources/plugins` directory (cf. [plug-in search pa
 npx degit github:camunda/camunda-modeler-plugin-linter camunda-modeler-plugin-linter
 ```
 
+As an alternative to the above command, you may download the plug-in from GitHub and unpack it manually, too.
+
 Restart the Camunda Modeler.
 
-#### Expected Results
+### Expected Results
 
 * The [Linter plug-in](https://github.com/camunda/camunda-modeler-linter-plugin) is downloaded from GitHub and unpacked to the `resources/plugins/camunda-modeler-linter-plugin` directory.
 * After restarting the Camunda Modeler validation controls show up when opening a BPMN diagram:
@@ -58,11 +60,13 @@ Restart the Camunda Modeler.
 
 ## Step 1: Play Around with the Plug-in
 
-#### Instructions
+### Instructions
 
-You got a local BPMN diagram? Open the diagram. Activate the linting mode by clicking the lint result overlay and  see how validation kicks in.
+You got a local BPMN diagram? Open the diagram.
 
-#### Expected Results
+Activate the linting mode by clicking the lint result overlay and see how validation kicks in.
+
+### Expected Results
 
 * Linter errors and warnings show up on the diagram. Or your diagram is bullet-proof already!
    ![Linter Plug-in Enabled](./images/01_linter_plugin_enabled.png)
@@ -70,7 +74,7 @@ You got a local BPMN diagram? Open the diagram. Activate the linting mode by cli
 
 ## Step 2: Create a Project Directory to Work in
 
-#### Instructions
+### Instructions
 
 The linter plug-in has a [documented extension point](https://github.com/camunda/camunda-modeler-linter-plugin#overriding-provided-rules) to override the provided lint rules with custom ones.
 
@@ -86,7 +90,7 @@ cd camunda-modeler-workshop
 
 ## Step 3: Generate Your Own Camunda Modeler Plug-in
 
-#### Instructions
+### Instructions
 
 We'll create a new plug-in in the directory `camunda-modeler-workshop/camunda-modeler-plugin-custom`.
 
@@ -104,7 +108,7 @@ npm install
 npm run dev
 ```
 
-#### Expected Results
+### Expected Results
 
 * The above steps completed successfully
 * The `camunda-modeler-workshop/camunda-modeler-plugin-custom` directory contains sources of your modeler plug-in.
@@ -112,13 +116,13 @@ npm run dev
 
 ## Step 4: Link your Plug-in with the Camunda Modeler
 
-#### Instructions
+### Instructions
 
 Follow the [Development Setup](https://github.com/camunda/camunda-modeler-plugin-example#development-setup) hints and link your plug-in to the Camunda Modeler `resources/plugins` directory via a symbolic link.
 
 Restart the Camunda Modeler. Open the developer console via `F12`. Create a BPMN element via the palette.
 
-#### Expected Results
+### Expected Results
 
 * The `Plugins` menu shows a `custom Plug-in` entry
 * Inside the developer tools you see additional log output that a shape got added
@@ -127,7 +131,9 @@ Restart the Camunda Modeler. Open the developer console via `F12`. Create a BPMN
 
 ## Step 5: Allow Rules to be Packed with the Plug-in
 
-#### Instructions
+> In case you get stuck or run out of time while performing the following steps: You may checkout the [custom-linter-rules-plugin](https://github.com/camunda/camunda-modeler-custom-linter-rules-plugin) that summarizes the results of steps five to seven.
+
+### Instructions
 
 The linter plug-in [offers a way](https://github.com/camunda/camunda-modeler-linter-plugin#overriding-provided-rules) how we can configure used linter rules and provide our own rules. Lets use this to get rid of the annoying label required rule.
 
@@ -163,7 +169,7 @@ npm run dev
 Go into the Camunda Modeler and reload it by pressing `CtrlOrCmd+R` within the development tools.
 
 
-#### Expected Behavior
+### Expected Behavior
 
 * The label required rule is disabled in the Modeler
     ![No Label Required](./images/05_label_rule_disabled.png)
@@ -171,7 +177,7 @@ Go into the Camunda Modeler and reload it by pressing `CtrlOrCmd+R` within the d
 
 ## Step 6: Create your BPMNLint Rules Extension
 
-#### Instructions
+### Instructions
 
 The Camunda Modeler linter plug-in uses [bpmnlint](https://github.com/bpmn-io/bpmnlint) under the hood.
 
@@ -187,7 +193,7 @@ npm test
 
 This generated the extension in the `bpmnlint-plugin-custom` sub-directory.
 
-#### Expected Results
+### Expected Results
 
 * The above steps completed successfully
 * The `camunda-modeler-workshop/bpmnlint-plugin-custom` directory contains sources of your bpmnlint plug-in.
@@ -195,7 +201,7 @@ This generated the extension in the `bpmnlint-plugin-custom` sub-directory.
 
 ## Step 7: Integrate Custom Lint Rules with our Plug-in
 
-#### Instructions
+### Instructions
 
 Within the `camunda-modeler-plugin-custom` directory, link the local plug-in:
 
@@ -221,7 +227,7 @@ Reload the Camunda Modeler.
 
 Model a manual task.
 
-#### Expected Results
+### Expected Results
 
 * The linter warns you when modeling the manual task
     ![Manual Task no no](./images/07_manual_task_error.png)
@@ -229,11 +235,11 @@ Model a manual task.
 
 ## Step 8: Go Wild and Create your Own Rules
 
-#### Instructions
+### Instructions
 
 A couple of ideas what to do next:
 
-* Copy the `no-manual-task` rule to warn on user tasks. Users are usually slow, we'd like to avoid them for black-box processing.
+* Copy the `no-manual-task` rule to warn on user tasks. We many avoid them when  we'd like to avoid them for black-box processing.
 * Debug rule evaluation, dig into elements that are being validated and the properties the BPMN meta-model exposes.
 * Can you create a rule that warns on all but external tasks for implementing work with the engine?
 
