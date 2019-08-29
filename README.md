@@ -22,6 +22,7 @@ More specific, we set out the accomplish the following:
 * You have an appropriate command line set up (__NO `cmd`__ but something like [`git-bash`](https://www.atlassian.com/git/tutorials/git-bash) on Windows)
 * You've [downloaded the Camunda Modeler](https://camunda.com/download/modeler/)
 * You have [Node.js](https://nodejs.org/en/) (LTS or higher) installed
+* You have an editor / IDE suitable for JavaScript development
 
 #### Expected Results
 
@@ -66,3 +67,55 @@ You got a local BPMN diagram? Open the diagram. Activate the linting mode by cli
 The linter plug-in has a [documented extension point](https://github.com/camunda/camunda-modeler-linter-plugin#overriding-provided-rules) to override the provided lint rules with custom ones.
 
 We will create our own plug-in that provides our own, custom rules to the app.
+
+
+## Step 2: Create a Project Directory to Work in
+
+We'll create the directory `camunda-modeler-workshop` and work from there in
+the next steps.
+
+```
+mkdir camunda-modeler-workshop
+cd camunda-modeler-workshop
+```
+
+## Step 3: Generate Your Own Camunda Modeler Plug-in
+
+We'll create a new plug-in in the directory `camunda-modeler-workshop/camunda-modeler-plugin-custom`.
+
+```
+npx create-camunda-modeler-plugin custom
+```
+
+Alternatively you may clone or download the [example plug-in](https://github.com/camunda/camunda-modeler-plugin-example) directly from GitHub, too.
+
+Next up, we create post download steps to install plug-in dependencies and spawn it in `dev` mode.
+
+```
+cd camunda-modeler-plugin-custom
+npm install
+npm run dev
+```
+
+#### Expected Results
+
+* The above steps completed successfully
+* The `camunda-modeler-workshop/camunda-modeler-plugin-custom` directory contains sources of your modeler plug-in.
+
+
+## Step 4: Link your Plug-in with the Camunda Modeler
+
+Follow the [Development Setup](https://github.com/camunda/camunda-modeler-plugin-example#development-setup) hints and link your plug-in to the Camunda Modeler `resources/plugins` directory via a symbolic link.
+
+Restart the Camunda Modeler. Open the developer console via `F12`. Create a BPMN element via the palette.
+
+#### Expected Results
+
+* The `Plugins` menu shows a `custom Plug-in` entry
+* Inside the developer tools you see additional log output that a shape got added
+    ![Developer console with custom log output](./images/04_developer_console.png)
+
+
+## License
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
