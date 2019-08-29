@@ -53,7 +53,7 @@ Restart the Camunda Modeler.
 
 ### Expected Results
 
-* The [Linter plug-in](https://github.com/camunda/camunda-modeler-linter-plugin) is downloaded from GitHub and unpacked to the `resources/plugins/camunda-modeler-linter-plugin` directory.
+* The [Linter plug-in](https://github.com/camunda/camunda-modeler-linter-plugin) is downloaded and unpacked to the `resources/plugins/camunda-modeler-linter-plugin` directory.
 * After restarting the Camunda Modeler validation controls show up when opening a BPMN diagram:
     ![Linter Plug-in Installed](./images/00_linter_plugin_installed.png)
 
