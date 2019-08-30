@@ -9,7 +9,7 @@ The goal of this workshop is to integrate [diagram validation](https://github.co
 
 More specific, we set out to accomplish the following:
 
-* Install [Camunda Modeler Linter plug-in](https://github.com/camunda/camunda-modeler-plugin-linter)
+* Install [Camunda Modeler Linter plug-in](https://github.com/camunda/camunda-modeler-linter-plugin)
 * Create own Camunda Modeler plug-in
 * Setup for plug-in development
 * Create [bpmnlint plug-in](https://github.com/bpmn-io/bpmnlint-plugin-example)
@@ -44,7 +44,7 @@ More specific, we set out to accomplish the following:
 Within the Camunda Modeler `resources/plugins` directory (cf. [plug-in search paths](https://github.com/camunda/camunda-modeler/tree/develop/docs/plugins#plugging-into-the-camunda-modeler)) execute:
 
 ```sh
-npx degit github:camunda/camunda-modeler-plugin-linter camunda-modeler-plugin-linter
+npx degit github:camunda/camunda-modeler-linter-plugin camunda-modeler-linter-plugin
 ```
 
 As an alternative to the above command, you may download the plug-in from GitHub and unpack it manually, too.
