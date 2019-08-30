@@ -7,7 +7,7 @@ Auxiliary resources for the workshop _Extending the Camunda Modeler for Fun and 
 
 The goal of this workshop is to integrate [diagram validation](https://github.com/camunda/camunda-modeler-linter-plugin) into the Camunda Modeler and implement our own plug-in that contributes custom validation rules.
 
-More specific, we set out the accomplish the following:
+More specific, we set out to accomplish the following:
 
 * Install [Camunda Modeler Linter plug-in](https://github.com/camunda/camunda-modeler-plugin-linter)
 * Create own Camunda Modeler plug-in
