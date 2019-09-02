@@ -142,6 +142,8 @@ Restart the Camunda Modeler to make it recognize the new plug-in.
 * The plug-in ships with a bpmnlint extension that implements a `no-manual-task` rule in the file `bpmnlint-plugin-custom/rules/no-manual-task.js`
 * Modeling a manual task in the Camunda Modeler triggers a warning:
     ![Manual Task Warning](./images/03_07_manual_task_warning.png)
+    
+Go to [step eight next](https://github.com/nikku/camunda-modeler-plugins-talk-2019/blob/master/README.md#step-8-go-wild-and-create-your-own-rules).
 
 
 ## Step 3: Generate Your Own Camunda Modeler Plug-in
