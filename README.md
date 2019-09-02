@@ -93,6 +93,8 @@ cd camunda-modeler-workshop
 > This roughly resembles steps [three](#step-3-generate-your-own-camunda-modeler-plug-in), [four](#step-4-link-your-plug-in-with-the-camunda-modeler), [five](#step-5-allow-rules-to-be-packed-with-the-plug-in), [six](#step-6-create-your-bpmnlint-rules-extension), and [seven](#step-7-integrate-custom-lint-rules-with-our-plug-in). 
 > 
 > If you are new to JavaScript and/or Camunda Modeler plug-in development, take this route.
+> 
+> After completing this step, jump right to [step eight](#step-8-go-wild-and-create-your-own-rules).
 
 ### Instructions
 
