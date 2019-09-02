@@ -88,6 +88,47 @@ cd camunda-modeler-workshop
 ```
 
 
+## Step 3-7: Setup to Create your Own Linter Rules
+
+> This roughly resembles steps [three](#step-3-generate-your-own-camunda-modeler-plug-in), [four](#step-4-link-your-plug-in-with-the-camunda-modeler), [five](#step-5-allow-rules-to-be-packed-with-the-plug-in), [six](#step-6-create-your-bpmnlint-rules-extension), and [seven](#step-7-integrate-custom-lint-rules-with-our-plug-in). 
+> 
+> If you are new to JavaScript and/or Camunda Modeler plug-in development, take this route.
+
+### Instructions
+
+The linter plug-in [offers an extension point](https://github.com/camunda/camunda-modeler-linter-plugin#overriding-provided-rules) to contribute your own lint rules. We create our own plug-in that uses this extension point to contribute validation rules to the app.
+
+Within the `camunda-modeler-workshop` directory, download and setup the [Custom Linter Rules plug-in](https://github.com/camunda/camunda-modeler-custom-linter-rules-plugin):
+
+```sh
+npx degit github:camunda/camunda-modeler-custom-linter-rules-plugin custom-linter-rules
+```
+
+Setup the plug-in:
+
+```sh
+cd custom-linter-rules
+npm install
+```
+
+Spawn the plug-in in development setup to automatically re-build it on every change:
+
+```sh
+npm run dev
+```
+
+Follow the [development setup](https://github.com/camunda/camunda-modeler-plugin-example#development-setup) hints and link your plug-in to the Camunda Modeler `resources/plugins` directory via a symbolic link. This ensures the editor recognizes changes you make to the plug-in, as you develop.
+
+Restart the Camunda Modeler to make it recognize the new plug-in.
+
+### Expected Behavior
+
+* TBD
+
+### What is Inside?
+
+* TBD
+
 ## Step 3: Generate Your Own Camunda Modeler Plug-in
 
 ### Instructions
@@ -130,8 +171,6 @@ Restart the Camunda Modeler. Open the developer console via `F12`. Create a BPMN
 
 
 ## Step 5: Allow Rules to be Packed with the Plug-in
-
-> In case you get stuck or run out of time while performing the following steps: You may checkout the [custom-linter-rules-plugin](https://github.com/camunda/camunda-modeler-custom-linter-rules-plugin) that summarizes the results of steps five to seven.
 
 ### Instructions
 
@@ -242,6 +281,12 @@ A couple of ideas what to do next:
 * Copy the `no-manual-task` rule to warn on user tasks. We want to avoid them during black-box processing.
 * Debug rule evaluation, dig into elements that are being validated and the properties the BPMN meta-model exposes.
 * Can you create a rule that warns on all but external tasks for implementing work with the engine?
+
+### Plug-in Development Tips
+
+* Inside the Camunda Modeler, open the developer console via `F12`.
+* Press `CmdOrCtrl + R` within the developer console to reload the app. This will make it aware of any linked plug-in changes.
+* Use the debugger built into the developer console (cf. `Source` tab) to investigate the inner workings of your plug-ins.
 
 
 ## License
