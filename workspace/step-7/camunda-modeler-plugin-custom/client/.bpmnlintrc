@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "bpmnlint:recommended"
+  ],
+  "rules": {
+    "label-required": "off",
+    "custom/no-manual-task": "error"
+  }
+}

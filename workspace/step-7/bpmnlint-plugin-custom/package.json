@@ -1,0 +1,22 @@
+{
+  "name": "bpmnlint-plugin-custom",
+  "version": "0.0.0",
+  "description": "The bpmnlint custom plug-in",
+  "main": "index.js",
+  "scripts": {
+    "all": "npm test",
+    "test": "mocha test.js"
+  },
+  "keywords": [
+    "bpmnlint",
+    "plugin"
+  ],
+  "devDependencies": {
+    "bpmnlint": "^6.0.0",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "bpmnlint-utils": "^1.0.2"
+  }
+}
