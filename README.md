@@ -265,7 +265,7 @@ Within the `camunda-modeler-plugin-custom` directory, link the local plug-in:
 npm install bpmnlint-plugin-custom@file:../bpmnlint-plugin-custom
 ```
 
-Update the `.bpmnlintrc` file to enable the `custom/no-manual-task` rule:
+Update the `client/.bpmnlintrc` file in the `camunda-modeler-plugin-custom` directory to enable the `custom/no-manual-task` rule:
 
 ```json
 {
