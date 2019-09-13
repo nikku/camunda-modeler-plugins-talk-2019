@@ -41,7 +41,15 @@ More specific, we set out to accomplish the following:
 
 ### Instructions
 
-Within the Camunda Modeler `resources/plugins` directory (cf. [plug-in search paths](https://github.com/camunda/camunda-modeler/tree/develop/docs/plugins#plugging-into-the-camunda-modeler)) execute:
+Locate the Camunda Modeler `resources/plugins` director (cf. [plug-in search paths](https://github.com/camunda/camunda-modeler/tree/develop/docs/plugins#plugging-into-the-camunda-modeler)) on your operating system:
+
+* __Windows:__ `%APPDATA%/camunda-modeler/resources/plugins`
+* __Linux:__ `$XDG_CONFIG_HOME/camunda-modeler/resources/plugins` or `~/.config/camunda-modeler/resources/plugins`
+* __MacOS:__ `~/Library/Application Support/camunda-modeler/resources/plugins`
+
+You may need to create that directory.
+
+Within that directory execute:
 
 ```sh
 npx degit github:camunda/camunda-modeler-linter-plugin camunda-modeler-linter-plugin
