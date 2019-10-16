@@ -1,6 +1,6 @@
 # Extending the Camunda Modeler
 
-Auxiliary resources for the workshop _Extending the Camunda Modeler for Fun and Profit_, helt at [CamundaCon 2019](https://www.camundacon.com/).
+Auxiliary resources for the workshop [_Extending the Camunda Modeler for Fun and Profit_](https://www.youtube.com/watch?v=sav98y4EFzE), helt at [CamundaCon 2019](https://www.camundacon.com/).
 
 
 ## Workshop Goals
